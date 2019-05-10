@@ -1,0 +1,22 @@
+<div swrActions>
+  <mat-checkbox (change)="onTranslateToWookieeChange($event)">
+    Translate to Wookiee
+  </mat-checkbox>
+</div>
+
+<mat-accordion>
+  <mat-expansion-panel
+    *ngFor="let person of people"
+    (afterExpand)="onAfterExpand(person)"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title [swrWookiee]="translateToWookiee">
+        {{ person.name }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <swr-person-details [person]="person"></swr-person-details>
+    <swr-person-films
+      [films]="filmsByPerson.get(person) | async"
+    ></swr-person-films>
+  </mat-expansion-panel>
+</mat-accordion>
