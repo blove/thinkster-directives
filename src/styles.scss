@@ -9,10 +9,10 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-.btn-grow {
+button {
   transition: all 250ms ease-in-out;
 
-  &:hover {
+  &.btn-grow {
     transform: scaleX(1.1);
   }
 }

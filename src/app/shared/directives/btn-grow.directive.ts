@@ -1,17 +1,16 @@
-import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { Directive, HostBinding, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[swrBtnGrow]'
 })
-export class BtnGrowDirective implements OnInit {
-  constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
+export class BtnGrowDirective {
+  @HostBinding('class.btn-grow') btnGrow = false;
 
-  ngOnInit() {
-    const el = this.elementRef.nativeElement;
-    if (!el) {
-      return;
-    }
+  @HostListener('mouseover') onMouseOver() {
+    this.btnGrow = true;
+  }
 
-    this.renderer.addClass(el, 'btn-grow');
+  @HostListener('mouseout') onMouseOut() {
+    this.btnGrow = false;
   }
 }
