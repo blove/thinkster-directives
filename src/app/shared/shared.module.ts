@@ -1,17 +1,24 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ContentDirective } from './directives';
-import { ActionsDirective } from './directives/actions.directive';
-import { WookieeDirective } from './directives/wookiee.directive';
-import { HanDirective } from './directives/han.directive';
-import { GreedoDirective } from './directives/greedo.directive';
 
-const DIRECTIVES = [
+import {
   ActionsDirective,
+  BtnGrowDirective,
   ContentDirective,
   GreedoDirective,
   HanDirective,
   WookieeDirective
+} from './directives';
+import { WookieePipe } from './pipes';
+
+const DIRECTIVES = [
+  ActionsDirective,
+  BtnGrowDirective,
+  ContentDirective,
+  GreedoDirective,
+  HanDirective,
+  WookieeDirective,
+  WookieePipe
 ];
 
 @NgModule({

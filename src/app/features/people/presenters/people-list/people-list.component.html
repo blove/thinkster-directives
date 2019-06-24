@@ -1,7 +1,7 @@
 <div swrActions>
-  <mat-checkbox (change)="onTranslateToWookieeChange($event)">
-    Translate to Wookiee
-  </mat-checkbox>
+  <button mat-button swrBtnGrow (click)="onTranslate()">
+    Translate
+  </button>
 </div>
 
 <mat-accordion>
@@ -10,8 +10,8 @@
     (afterExpand)="onAfterExpand(person)"
   >
     <mat-expansion-panel-header>
-      <mat-panel-title [swrWookiee]="translateToWookiee">
-        {{ person.name }}
+      <mat-panel-title>
+        {{ person.name | wookiee: translateToWookiee }}
       </mat-panel-title>
     </mat-expansion-panel-header>
     <swr-person-details [person]="person"></swr-person-details>

@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material';
 import { Observable } from 'rxjs';
+
 import { Film, FilmService, Person } from '../../../../core';
 
 @Component({
@@ -25,7 +26,7 @@ export class PeopleListComponent {
     this.filmsByPerson.set(person, films);
   }
 
-  onTranslateToWookieeChange(event: MatCheckboxChange): void {
-    this.translateToWookiee = event.checked;
+  onTranslate(): void {
+    this.translateToWookiee = !this.translateToWookiee;
   }
 }

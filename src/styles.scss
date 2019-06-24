@@ -8,3 +8,11 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+
+.btn-grow {
+  transition: all 250ms ease-in-out;
+
+  &:hover {
+    transform: scaleX(1.1);
+  }
+}
