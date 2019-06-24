@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import {
   ActionsDirective,
-  BtnGrowDirective,
   ContentDirective,
   GreedoDirective,
   HanDirective,
@@ -13,7 +12,6 @@ import { WookieePipe } from './pipes';
 
 const DIRECTIVES = [
   ActionsDirective,
-  BtnGrowDirective,
   ContentDirective,
   GreedoDirective,
   HanDirective,
