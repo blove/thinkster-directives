@@ -1,17 +1,17 @@
 import {
   Directive,
+  ElementRef,
   Input,
   OnChanges,
-  SimpleChanges,
-  ElementRef
+  SimpleChanges
 } from '@angular/core';
 
 @Directive({
   selector: '[swrHan]'
 })
 export class HanDirective implements OnChanges {
-  /** The directive data. */
-  @Input('swrHan') fire: boolean;
+  // 1. Create a new input binding property called `fire` and set the binding name to `swrHan`.
+  // hint: you can set the binding name by supplying the name as the first argument to the `@Input()` function.
 
   constructor(private readonly elementRef: ElementRef) {}
 
@@ -25,10 +25,8 @@ export class HanDirective implements OnChanges {
       src = '/assets/img/han-solo.png';
     }
 
-    // get the native element from the injected ElementRef instance
-    const el = this.elementRef.nativeElement as HTMLImageElement;
+    // 2. Get the native element from the injected ElementRef instance.
 
-    // set the updated image src attribute
-    el.src = src;
+    // 3. Set the updated image src attribute.
   }
 }

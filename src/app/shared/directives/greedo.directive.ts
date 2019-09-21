@@ -1,9 +1,9 @@
 import {
   Directive,
-  OnChanges,
   ElementRef,
-  SimpleChanges,
-  Input
+  Input,
+  OnChanges,
+  SimpleChanges
 } from '@angular/core';
 import { interval } from 'rxjs';
 import { first } from 'rxjs/operators';
@@ -12,8 +12,8 @@ import { first } from 'rxjs/operators';
   selector: '[swrGreedo]'
 })
 export class GreedoDirective implements OnChanges {
-  /** The directive data. */
-  @Input('swrGreedo') fire: boolean;
+  // 1. Create a new input binding property called `fire` and set the binding name to `swrGreedo`.
+  // hint: you can set the binding name by supplying the name as the first argument to the `@Input()` function.
 
   constructor(private readonly elementRef: ElementRef) {}
 
@@ -27,14 +27,9 @@ export class GreedoDirective implements OnChanges {
       src = '/assets/img/greedo.png';
     }
 
-    // get the native element from the injected ElementRef instance
-    const el = this.elementRef.nativeElement as HTMLImageElement;
+    // 2. Get the native element from the injected ElementRef instance.
 
-    // after 500 millisconds update the image src attribute
-    interval(500)
-      .pipe(first())
-      .subscribe(() => {
-        el.src = src;
-      });
+    // 3. After 500 millisconds update the image src attribute.
+    // Why? Well, as a fan of StrWrs will tell you, Han shot first :)
   }
 }
