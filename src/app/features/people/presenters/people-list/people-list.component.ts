@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MatCheckboxChange } from '@angular/material';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 import { Observable } from 'rxjs';
 
 import { Film, FilmService, Person } from '../../../../core';
