@@ -9,11 +9,11 @@ const routes: Routes = [
   },
   {
     path: 'mos-eisley',
-    loadChildren: './features/mos-eisley/mos-eisley.module#MosEisleyModule'
+    loadChildren: () => import('./features/mos-eisley/mos-eisley.module').then(m => m.MosEisleyModule)
   },
   {
     path: 'people',
-    loadChildren: './features/people/people.module#PeopleModule'
+    loadChildren: () => import('./features/people/people.module').then(m => m.PeopleModule)
   },
   {
     path: '**',
